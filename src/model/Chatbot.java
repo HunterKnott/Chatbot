@@ -28,11 +28,37 @@ public class Chatbot
 		responseList.add("What do you call yourself?");
 		responseList.add("Tee Hee");
 		responseList.add("Delicious");
+		responseList.add("You don't make the sense");
+		responseList.add("You're welcome!");
+		responseList.add("Don't talk to me, peasent!");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		
+		spookyList.add("Boooooooooooooooooooooooooo!");
+		spookyList.add("Give me candy!");
+		spookyList.add("Caaaaarrrrrrrrlllll");
+		spookyList.add("Corl");
+		spookyList.add("*Consuumes candy*");
+		spookyList.add("Take all the Kit-Kats!");
+		spookyList.add("Punkins");
+		spookyList.add("Spookay");
+		spookyList.add("What are YOU supposed to be?");
+		
 	}
 	//------------------------
 	public Chatbot(String content)
 	{
 		
+	}
+	//----------------------------
+	public String processText(String userText)
+	{
+		String answer = "";//Declares answer variable
+		answer += "You said: " + userText;//Adds this text to answer
+		return answer;//What will show up when method is called
 	}
 	//______________________________________________
 	public ArrayList<String> getResponseList()

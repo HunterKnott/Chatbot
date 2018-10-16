@@ -13,22 +13,24 @@ public class Controller
 	//_________________________________________________________
 	public Controller()
 	{
-		
+		simplebot = new Chatbot();
 	}
 	//---------------------------------------------
 	//-----------------------------------------------
 	public void start()
 	{
 		String userInput = "";
-		while(!userInput.equals("quit"))
+		while(!userInput.equalsIgnoreCase("quit") || !userInput.equalsIgnoreCase("q"))
 		{
 			userInput = JOptionPane.showInputDialog(null, "Do you want to continue?");
 		}
 	}
 	//-----------------------------------------------
-	String response;
-	public String interactWithChatbot()
+	public String interactWithChatbot(String text)
 	{
-		return response;
+		String output = "";
+		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
+		output = simplebot.processText(userResponse);
+		return output = "";
 	}
 }
