@@ -1,8 +1,8 @@
 package chat.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;//Why is the static there, and what does the * mean?
 
-import org.junit.After;
+import org.junit.After;//Still learning what these 3 mean
 import org.junit.Before;
 import org.junit.Test;
 

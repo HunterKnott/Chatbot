@@ -31,11 +31,11 @@ public class Chatbot
 		responseList.add("You don't make the sense");
 		responseList.add("You're welcome!");
 		responseList.add("Don't talk to me, peasent!");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
+		responseList.add("How do you eat that?");
+		responseList.add("Yeeesh!");
+		responseList.add("Was that a rhetorical question?");
+		responseList.add("I'm blushing");
+		responseList.add("Nice try");
 		
 		spookyList.add("Boooooooooooooooooooooooooo!");
 		spookyList.add("Give me candy!");
