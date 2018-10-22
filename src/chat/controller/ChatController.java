@@ -2,9 +2,7 @@ package chat.controller;
 
 //import model.ArrayList;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
-
 import chat.model.Chatbot;
 
 //_______________________________________________________
@@ -21,10 +19,11 @@ public class ChatController
 	//-----------------------------------------------
 	public void start()
 	{
-		String userInput = "";
-		while(!userInput.equalsIgnoreCase("quit") || !userInput.equalsIgnoreCase("q"))
+		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
+		while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
 		{
-			userInput = JOptionPane.showInputDialog(null, "Do you want to continue?");
+			start();
+			continueInput = "";//Prevents an infinite loop in the program running
 		}
 	}
 	//-----------------------------------------------

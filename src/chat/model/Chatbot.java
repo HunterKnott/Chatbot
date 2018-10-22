@@ -23,6 +23,7 @@ public class Chatbot
 	//------------------------
 	private void buildTheLists()
 	{
+		responseList.add("Hello");
 		responseList.add("Good evening!");
 		responseList.add("Farewell...");
 		responseList.add("What do you call yourself?");
@@ -37,6 +38,7 @@ public class Chatbot
 		responseList.add("I'm blushing");
 		responseList.add("Nice try");
 		
+		spookyList.add("Happy Halloween!");
 		spookyList.add("Boooooooooooooooooooooooooo!");
 		spookyList.add("Give me candy!");
 		spookyList.add("Caaaaarrrrrrrrlllll");
@@ -66,6 +68,11 @@ public class Chatbot
 		return responseList;
 	}
 	//---------------------------
+	public ArrayList<String> getSpookyList()
+	{
+		return spookyList;
+	}
+	//----------------------------
 	public String getContent()
 	{
 		return content;
@@ -84,6 +91,11 @@ public class Chatbot
 	public void setResponseList(ArrayList<String> responseList)
 	{
 		this.responseList = responseList;
+	}
+	//--------------------------------
+	public void setSpookyList(ArrayList<String> spookyList)
+	{
+		this.spookyList = spookyList;
 	}
 	//--------------------------------
 	public void setContent(String content)
