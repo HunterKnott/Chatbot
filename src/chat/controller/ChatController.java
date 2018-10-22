@@ -8,12 +8,12 @@ import javax.swing.JOptionPane;
 import chat.model.Chatbot;
 
 //_______________________________________________________
-public class Controller
+public class ChatController
 {
 	private Chatbot simplebot;
 	
 	//_________________________________________________________
-	public Controller()
+	public ChatController()
 	{
 		simplebot = new Chatbot();
 	}
@@ -34,5 +34,10 @@ public class Controller
 		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
 		output = simplebot.processText(userResponse);
 		return output = "";
+	}
+	//___________________________________________
+	public Chatbot getChatbot()
+	{
+		return simplebot;
 	}
 }
