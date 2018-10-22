@@ -1,5 +1,5 @@
 //Diagram on umlet
-package model;
+package chat.model;
 import java.util.ArrayList;
 public class Chatbot
 {

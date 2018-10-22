@@ -1,9 +1,11 @@
-package controller;
+package chat.controller;
 
 //import model.ArrayList;
 import java.util.ArrayList;
-import model.Chatbot;
+
 import javax.swing.JOptionPane;
+
+import chat.model.Chatbot;
 
 //_______________________________________________________
 public class Controller
