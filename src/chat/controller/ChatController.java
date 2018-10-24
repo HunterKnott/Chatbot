@@ -16,7 +16,6 @@ public class ChatController
 		simplebot = new Chatbot();
 	}
 	//---------------------------------------------
-	//-----------------------------------------------
 	public void start()
 	{
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");

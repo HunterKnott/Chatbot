@@ -115,23 +115,23 @@ public class Chatbot
 		this.joke = joke;
 	}
 	//________________________________________________
-	public void legitimacyChecker(String testString)
+	public void legitimacyChecker(String input)
 	{
-		boolean stringLegitimacy = true;
+		boolean isValid = true;
 		
-		if (testString == null)
+		if (input == null)//Remember that when checking for null, use == and not .equals
 		{
-			
+			isValid = false;
 		}
-		if (testString.equals(""))
+		if (input.equals(""))
 		{
-			
+			isValid = false;
 		}
-		if (testString.equals("asdfghjkl"))
+		if (input.equals("asdfghjkl"))
 		{
-			
+			isValid = false;
 		}
-		if (testString.equals("aa"))
+		if (input.equals("aa"))
 		{
 			
 		}
