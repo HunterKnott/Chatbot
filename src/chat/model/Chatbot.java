@@ -8,6 +8,8 @@ public class Chatbot
 	private String content;
 	private String currentUser;
 	private String joke;
+	
+	private String legitimacyChecker;
 	//____________________________________________
 	public Chatbot()
 	{
@@ -87,7 +89,7 @@ public class Chatbot
 	{
 		return joke;
 	}
-	//_______________________________________
+	//________________________________________________________________
 	public void setResponseList(ArrayList<String> responseList)
 	{
 		this.responseList = responseList;
@@ -112,4 +114,27 @@ public class Chatbot
 	{
 		this.joke = joke;
 	}
+	//________________________________________________
+	public void legitimacyChecker(String testString)
+	{
+		boolean stringLegitimacy = true;
+		
+		if (testString == null)
+		{
+			
+		}
+		if (testString.equals(""))
+		{
+			
+		}
+		if (testString.equals("asdfghjkl"))
+		{
+			
+		}
+		if (testString.equals("aa"))
+		{
+			
+		}
+	}
+	
 }

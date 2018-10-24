@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import chat.model.Chatbot;
 
-public class ChabotTest
+public class ChatbotTest
 {
 	private Chatbot testedBot;
 
@@ -75,7 +75,7 @@ public class ChabotTest
 		assertFalse("Null should return false", testedBot.legitimacyChecker(null));
 		assertFalse("Empty string should return false", testedBot.legitimacyChecker(""));
 		assertFalse("Keyboard mash should return false", testedBot.legitimacyChecker("asdfghjkl"));
-		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("a"));
+		assertTrue("Strings more than 1 letter should return true", testedBot.legitimacyChecker("aa"));
 	}
 
 	@Test
