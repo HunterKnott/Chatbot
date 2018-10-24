@@ -115,7 +115,7 @@ public class Chatbot
 		this.joke = joke;
 	}
 	//________________________________________________
-	public void legitimacyChecker(String input)
+	public boolean legitimacyChecker(String input)
 	{
 		boolean isValid = true;
 		
@@ -123,18 +123,16 @@ public class Chatbot
 		{
 			isValid = false;
 		}
-		if (input.equals(""))
+		else if (input.length() < 2)//If the input is less than 2 characters, it's invalid
 		{
 			isValid = false;
 		}
-		if (input.equals("asdfghjkl"))
+		else if (input.contains("sdf") || input.contains("jkl") || input.contains("cvb"))//This is checking for keyboard mashing
 		{
 			isValid = false;
 		}
-		if (input.equals("aa"))
-		{
-			
-		}
+		
+		return isValid;
 	}
 	
 }
