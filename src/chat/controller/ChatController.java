@@ -18,6 +18,7 @@ public class ChatController
 	//---------------------------------------------
 	public void start()
 	{
+		interactWithChatbot();
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
 		while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
 		{
@@ -26,7 +27,7 @@ public class ChatController
 		}
 	}
 	//-----------------------------------------------
-	public String interactWithChatbot(String text)
+	public String interactWithChatbot()
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
