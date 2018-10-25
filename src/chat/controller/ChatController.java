@@ -27,7 +27,7 @@ public class ChatController
 		}
 	}
 	//-----------------------------------------------
-	public String interactWithChatbot()
+	public String interactWithChatbot(String text)
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
