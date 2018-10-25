@@ -37,6 +37,8 @@ public class Chatbot
 		responseList.add("Was that a rhetorical question?");
 		responseList.add("I'm blushing");
 		responseList.add("Nice try");
+		responseList.add("That's a great song");
+		responseList.add("Goodbye");
 		
 		spookyList.add("Happy Halloween!");
 		spookyList.add("Boooooooooooooooooooooooooo!");

@@ -16,6 +16,11 @@ public class ChatController
 		simplebot = new Chatbot();
 	}
 	//---------------------------------------------
+	public Chatbot getChatbot()
+	{
+		return simplebot;
+	}
+	//---------------------------------------------
 	public void start()
 	{
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
@@ -25,18 +30,13 @@ public class ChatController
 			continueInput = "";//Prevents an infinite loop in the program running
 		}
 	}
-	//-----------------------------------------------
+	//__________________________________________________
 	public String interactWithChatbot(String text)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
-		output = simplebot.processText(userResponse);
+		String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
+		output = "Chatbot says: " + simplebot.processText(userResponse);
 		return output;
-	}
-	//___________________________________________
-	public Chatbot getChatbot()
-	{
-		return simplebot;
 	}
 	//____________________________________________
 	public String useChatbotCheckers(String input)
