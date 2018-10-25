@@ -8,8 +8,6 @@ public class Chatbot
 	private String content;
 	private String currentUser;
 	private String joke;
-	
-	private String legitimacyChecker;
 	//____________________________________________
 	public Chatbot()
 	{
@@ -61,7 +59,7 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";//Declares answer variable
-		answer += "You said: " + userText;//Adds this text to answer
+		answer = "You said: " + userText;//Adds this text to answer
 		return answer;//What will show up when method is called
 	}
 	//______________________________________________
@@ -134,5 +132,11 @@ public class Chatbot
 		
 		return isValid;
 	}
-	
+	//-----------------------------------------
+	public boolean spookyChecker(String input)
+	{
+		boolean isValid = true;
+		
+		return isValid;
+	}
 }

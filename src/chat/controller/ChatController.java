@@ -18,7 +18,6 @@ public class ChatController
 	//---------------------------------------------
 	public void start()
 	{
-		interactWithChatbot();
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
 		while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
 		{
@@ -32,7 +31,7 @@ public class ChatController
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "why hello there");
 		output = simplebot.processText(userResponse);
-		return output = "";
+		return output;
 	}
 	//___________________________________________
 	public Chatbot getChatbot()
