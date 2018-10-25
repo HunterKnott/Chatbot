@@ -133,6 +133,13 @@ public class Chatbot
 		return isValid;
 	}
 	//-----------------------------------------
+	public boolean contentChecker(String input)
+	{
+		boolean isValid = true;
+		
+		return isValid;
+	}
+	//-----------------------------------------
 	public boolean spookyChecker(String input)
 	{
 		boolean isValid = true;
