@@ -55,7 +55,7 @@ public class Chatbot
 	//------------------------
 	public Chatbot(String content)
 	{
-		
+		content.equals("sample content");
 	}
 	//----------------------------
 	public String processText(String userText)
@@ -172,6 +172,11 @@ public class Chatbot
 		else
 		{
 			isValid = false;
+		}
+		
+		if(input.contains("spooky"))
+		{
+			input = input + "Halloween";
 		}
 		return isValid;
 	}

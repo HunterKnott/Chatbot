@@ -24,6 +24,7 @@ public class ChatController
 	public void start()
 	{
 		String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
+		useChatbotCheckers(userResponse);
 		interactWithChatbot(userResponse);
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
 		if(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))

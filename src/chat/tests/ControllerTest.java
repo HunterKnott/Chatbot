@@ -1,3 +1,4 @@
+//To run the tests, you must be on this screen
 package chat.tests;
 
 import static org.junit.Assert.*;//Why is the static there, and what does the * mean?
