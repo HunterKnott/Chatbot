@@ -23,18 +23,18 @@ public class ChatController
 	//---------------------------------------------
 	public void start()
 	{
-		JOptionPane.showMessageDialog(null, "Type 'Yes' to run the program again");
-		while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
+		String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
+		interactWithChatbot(userResponse);
+		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
+		if(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
 		{
 			start();
-			continueInput = "";//Prevents an infinite loop in the program running
 		}
 	}
 	//__________________________________________________
 	public String interactWithChatbot(String userInput)
 	{
-		String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
-		String output = "Chatbot says: " + simplebot.processText(userResponse);
+		String output = "Chatbot says: " + simplebot.processText(userInput);
 		return output;
 	}
 	//____________________________________________
