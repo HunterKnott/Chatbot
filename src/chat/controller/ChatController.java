@@ -23,26 +23,25 @@ public class ChatController
 	//---------------------------------------------
 	public void start()
 	{
-		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
-		while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
+		JOptionPane.showMessageDialog(null, "Type 'Yes' to run the program again");
+		/*while(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
 		{
 			start();
 			continueInput = "";//Prevents an infinite loop in the program running
-		}
+		}*/
 	}
 	//__________________________________________________
-	public String interactWithChatbot(String text)
+	public String interactWithChatbot(String userInput)
 	{
-		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
-		output = "Chatbot says: " + simplebot.processText(userResponse);
+		String output = "Chatbot says: " + simplebot.processText(userResponse);
 		return output;
 	}
 	//____________________________________________
 	public String useChatbotCheckers(String input)
 	{
 		String output = "";
-		
+		spookyChecker(input);
 		return output;
 	}
 }

@@ -40,7 +40,7 @@ public class Chatbot
 		responseList.add("That's a great song");
 		responseList.add("Goodbye");
 		
-		spookyList.add("Happy Halloween!");
+		spookyList.add("Halloween");
 		spookyList.add("Boooooooooooooooooooooooooo!");
 		spookyList.add("Give me candy!");
 		spookyList.add("Caaaaarrrrrrrrlllll");
@@ -144,8 +144,27 @@ public class Chatbot
 	//-----------------------------------------
 	public boolean spookyChecker(String input)
 	{
-		boolean isValid = true;
+		boolean isValid = false;
 		
+		for(String spookyString: spookyList)
+		{
+			if(input.contains(spookyString))
+			{
+				isValid = true;
+			}
+		}
+		if(input.contains("Easter"))
+		{
+			isValid = false;
+		}
+		else if(input.contains("Halloween"))
+		{
+			isValid = true;
+		}
+		else
+		{
+			isValid = false;
+		}
 		return isValid;
 	}
 }
