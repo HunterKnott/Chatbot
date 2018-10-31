@@ -61,7 +61,7 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";//Declares answer variable
-		answer = "You said: " + userText;//Adds this text to answer
+		answer = "Chatbot says: " + "ok";//Adds this text to answer
 		return answer;//What will show up when method is called
 	}
 	//______________________________________________
