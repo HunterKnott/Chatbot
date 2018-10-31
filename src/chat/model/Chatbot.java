@@ -137,7 +137,15 @@ public class Chatbot
 	//-----------------------------------------
 	public boolean contentChecker(String input)
 	{
-		boolean isValid = true;
+		boolean isValid = false;
+		
+		for(String contentString: responseList)
+		{
+			if(input.contains(contentString))
+			{
+				isValid = true;
+			}
+		}
 		
 		return isValid;
 	}
