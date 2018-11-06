@@ -12,9 +12,8 @@ public class Chatbot
 	public Chatbot()
 	{
 		this.joke = "Why was Timmy sad?";
-		this.content = new String("sample content");
+		this.content = "sample content";
 		this.currentUser = new String("Very handsome man!");
-		
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
 		
@@ -53,9 +52,9 @@ public class Chatbot
 		
 	}
 	//------------------------
-	public Chatbot(String content)
+	public Chatbot(String text)
 	{
-		content.equals("sample content");
+		content = "sample content";
 	}
 	//----------------------------
 	public String processText(String userText)
