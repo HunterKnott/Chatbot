@@ -151,6 +151,11 @@ public class Chatbot
 			isValid = false;
 		}
 		
+		if(input.equals(content))
+		{
+			isValid = true;
+		}
+		
 		return isValid;
 	}
 	//-----------------------------------------
