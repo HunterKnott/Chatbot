@@ -138,12 +138,17 @@ public class Chatbot
 	{
 		boolean isValid = false;
 		
-		for(String contentString: responseList)
+		/*for(String contentString: responseList)
 		{
 			if(input.contains(contentString))
 			{
 				isValid = true;
 			}
+		}*/
+		
+		if(input == null)
+		{
+			isValid = false;
 		}
 		
 		return isValid;
@@ -153,18 +158,7 @@ public class Chatbot
 	{
 		boolean isValid = false;
 		
-		for(String spookyString: spookyList)
-		{
-			if(input.contains(spookyString))
-			{
-				isValid = true;
-			}
-		}
-		if(input.contains("Easter"))
-		{
-			isValid = false;
-		}
-		else if(input.contains("Halloween") || input.contains("spooky"))
+		if(input.contains("Halloween"))
 		{
 			isValid = true;
 		}
@@ -173,10 +167,31 @@ public class Chatbot
 			isValid = false;
 		}
 		
+		for(String spookyString: spookyList)
+		{
+			if(input.contains(spookyString))
+			{
+				isValid = true;
+			}
+		}
+		
+		/*if(input.contains("Easter"))
+		{
+			isValid = false;
+		}
+		else if(input.contains("spooky"))//spooky must be here to make testUseChatbotCheckers() pass
+		{
+			isValid = true;
+		}
+		else
+		{
+			isValid = false;
+		}
 		if(input.contains("spooky"))
 		{
 			input = input + "Halloween";
-		}
+		}*/
+		
 		return isValid;
 	}
 }
