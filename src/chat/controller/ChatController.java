@@ -35,16 +35,22 @@ public class ChatController
 	//__________________________________________________
 	public String interactWithChatbot(String userInput)
 	{
-		String output = "Chatbot says: " + simplebot.processText(userInput);
+		String output = "";
+		if(userInput == null)
+		{
+			output = "You've got a null";
+		}
+		output = "Chatbot says: " + simplebot.processText(userInput);
 		return output;
 	}
 	//____________________________________________
 	public String useChatbotCheckers(String input)
 	{
 		String output = "";
-		simplebot.legitimacyChecker(input);//It's simplebot because that's the object
-		simplebot.contentChecker(input);
-		simplebot.spookyChecker(input);
+		if (simplebot.spookyChecker(input))//Use the object simplebot, not the class Chatbot
+		{
+			output = "You said a spooky word. Halloween";
+		}
 		return output;
 	}
 }

@@ -12,7 +12,7 @@ public class Chatbot
 	public Chatbot()
 	{
 		this.joke = "Why was Timmy sad?";
-		this.content = new String("Practical real talk from a friendly computer");
+		this.content = new String("sample content");
 		this.currentUser = new String("Very handsome man!");
 		
 		this.responseList = new ArrayList<String>();
@@ -60,8 +60,8 @@ public class Chatbot
 	//----------------------------
 	public String processText(String userText)
 	{
-		String answer = "";//Declares answer variable
-		answer = "Chatbot says: " + "ok";//Adds this text to answer
+		String answer = "You said: ";//Declares answer variable
+		answer += "Chatbot says: " + userText;//Adds this text to answer
 		return answer;//What will show up when method is called
 	}
 	//______________________________________________
@@ -165,7 +165,7 @@ public class Chatbot
 		{
 			isValid = false;
 		}
-		else if(input.contains("Halloween"))
+		else if(input.contains("Halloween") || input.contains("spooky"))
 		{
 			isValid = true;
 		}
