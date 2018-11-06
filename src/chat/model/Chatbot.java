@@ -138,14 +138,6 @@ public class Chatbot
 	{
 		boolean isValid = false;
 		
-		/*for(String contentString: responseList)
-		{
-			if(input.contains(contentString))
-			{
-				isValid = true;
-			}
-		}*/
-		
 		if(input == null)
 		{
 			isValid = false;
