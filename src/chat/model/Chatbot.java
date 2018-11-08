@@ -1,6 +1,8 @@
 //Diagram on umlet
 package chat.model;
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 public class Chatbot
 {
 	private ArrayList<String> responseList;
@@ -55,13 +57,6 @@ public class Chatbot
 	public Chatbot(String text)
 	{
 		content = "sample content";
-	}
-	//----------------------------
-	public String processText(String userText)
-	{
-		String answer = "You said: ";//Declares answer variable
-		answer += "Chatbot says: " + userText;//Adds this text to answer
-		return answer;//What will show up when method is called
 	}
 	//______________________________________________
 	public ArrayList<String> getResponseList()
@@ -134,6 +129,18 @@ public class Chatbot
 		return isValid;
 	}
 	//-----------------------------------------
+	public String processText(String userText)
+	{
+		//Add null statement and empty statement
+		String answer = "You said: ";//Declares answer variable
+		answer += "Chatbot says: " + userText;//Adds this text to answer
+		if(contentChecker(userText))
+		{
+			answer = "You said the special words";
+		}
+		return answer;//What will show up when method is called
+	}
+	//-------------------------------------------
 	public boolean contentChecker(String input)
 	{
 		boolean isValid = false;
@@ -143,9 +150,21 @@ public class Chatbot
 			isValid = false;
 		}
 		
-		if(input.equals(content))
+		if(input.contains(content))
 		{
-			isValid = true;
+		
+			if(input.equals(content))
+			{
+				isValid = true;
+			}
+			else if(input.startsWith(content + " "))
+			{
+				isValid = true;
+			}
+			else if(input.endsWith(" " + content))
+			{
+				isValid = true;
+			}
 		}
 		
 		return isValid;
@@ -155,15 +174,6 @@ public class Chatbot
 	{
 		boolean isValid = false;
 		
-		/*if(input.contains("Halloween"))
-		{
-			isValid = true;
-		}
-		else
-		{
-			isValid = false;
-		}*/
-		
 		for(String spookyString: spookyList)
 		{
 			if(input.contains(spookyString))
@@ -171,23 +181,6 @@ public class Chatbot
 				isValid = true;
 			}
 		}
-		
-		/*if(input.contains("Easter"))
-		{
-			isValid = false;
-		}
-		else if(input.contains("spooky"))//spooky must be here to make testUseChatbotCheckers() pass
-		{
-			isValid = true;
-		}
-		else
-		{
-			isValid = false;
-		}
-		if(input.contains("spooky"))
-		{
-			input = input + "Halloween";
-		}*/
 		
 		return isValid;
 	}
