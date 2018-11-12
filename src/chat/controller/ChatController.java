@@ -27,9 +27,9 @@ public class ChatController
 		useChatbotCheckers(userResponse);
 		JOptionPane.showMessageDialog(null, interactWithChatbot(userResponse));
 		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
-		if(continueInput.equals("Yes") || continueInput.equals("yes") || continueInput.equals("Y") || continueInput.equals("y"))
+		String userInput = JOptionPane.showInputDialog(null, "q to quit");
 		{
-			start();
+			useChatbotCheckers(userInput);
 		}
 	}
 	//__________________________________________________
@@ -38,7 +38,11 @@ public class ChatController
 		String output = "";
 		if(userInput == null)
 		{
-			output = "You've got a null";
+			output = "It returned null!";
+		}
+		else
+		{
+			output = userInput;
 		}
 		output = "Chatbot says: " + simplebot.processText(userInput);
 		return output;

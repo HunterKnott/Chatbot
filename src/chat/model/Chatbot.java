@@ -131,6 +131,37 @@ public class Chatbot
 	//-----------------------------------------
 	public String processText(String userText)
 	{
+		String userResponse = "You said: ";
+		String chatbotResponse = "Chatbot says: ";
+		
+		int response = (int) (Math.random() + responseList.size());
+		
+		if(userText == null)
+		{
+			userResponse += "nothing";
+			chatbotResponse += "You can't enter null!";
+		}
+		
+		else if(userText.length() < 0)
+		{
+			userResponse = "nothing";
+			chatbotResponse = "You have to enter some text";
+		}
+		
+		else if(userText.contains(content))
+		{
+			userResponse += userText;
+			userResponse += "You said the special words";
+		}
+		
+		else
+		{
+			userResponse += userText;
+			chatbotResponse += responseList.get(response);
+			
+			String answer = userResponse + System.lineSeparator() + chatbotResponse;
+		}
+		
 		//Add null statement and empty statement
 		String answer = "You said: ";//Declares answer variable
 		answer += "Chatbot says: " + userText;//Adds this text to answer
