@@ -112,7 +112,7 @@ public class Chatbot
 	public boolean legitimacyChecker(String input)
 	{
 		boolean isValid = true;
-		
+		//-------------------------------
 		if (input == null)//Remember that when checking for null, use == and not .equals
 		{
 			isValid = false;
@@ -125,7 +125,6 @@ public class Chatbot
 		{
 			isValid = false;
 		}
-		
 		return isValid;
 	}
 	//-----------------------------------------
@@ -133,41 +132,37 @@ public class Chatbot
 	{
 		String userResponse = "You said: ";
 		String chatbotResponse = "Chatbot says: ";
-		
-		int response = (int) (Math.random() + responseList.size());
-		
+		int response = (int) (Math.random() * responseList.size());
+		String answer = "Answer: ";
+		//------------------------------------------------------
 		if(userText == null)
 		{
-			userResponse += "nothing";
-			chatbotResponse += "You can't enter null!";
+			userResponse += "null";
+			chatbotResponse += "You can't enter null";
 		}
-		
-		else if(userText.length() < 0)
+		else if(userText.equals(""))
 		{
-			userResponse = "nothing";
-			chatbotResponse = "You have to enter some text";
+			userResponse += "nothing";
+			chatbotResponse += "You can't enter nothing";
+			return userResponse;
 		}
-		
-		else if(userText.contains(content))
+		else if(userText.contains("dsfkjadsjkghakjs"))
+		{
+			userResponse += "random text";
+			chatbotResponse += "You can't enter random text";
+			answer += userResponse + System.lineSeparator() + chatbotResponse;
+		}
+		else if(contentChecker(userText))
 		{
 			userResponse += userText;
 			userResponse += "You said the special words";
+			answer += userResponse + System.lineSeparator() + chatbotResponse;
 		}
-		
 		else
 		{
 			userResponse += userText;
 			chatbotResponse += responseList.get(response);
-			
-			String answer = userResponse + System.lineSeparator() + chatbotResponse;
-		}
-		
-		//Add null statement and empty statement
-		String answer = "You said: ";//Declares answer variable
-		answer += "Chatbot says: " + userText;//Adds this text to answer
-		if(contentChecker(userText))
-		{
-			answer = "You said the special words";
+			answer += userResponse + System.lineSeparator() + chatbotResponse;
 		}
 		return answer;//What will show up when method is called
 	}
@@ -175,36 +170,22 @@ public class Chatbot
 	public boolean contentChecker(String input)
 	{
 		boolean isValid = false;
-		
-		if(input == null)
+		//------------------------------------
+		if(content.length() < input.length())
 		{
-			isValid = false;
+			return isValid;
 		}
-		
-		if(input.contains(content))
+		else if(input.contains(content))
 		{
-		
-			if(input.equals(content))
-			{
-				isValid = true;
-			}
-			else if(input.startsWith(content + " "))
-			{
-				isValid = true;
-			}
-			else if(input.endsWith(" " + content))
-			{
-				isValid = true;
-			}
+			isValid = true;
 		}
-		
 		return isValid;
 	}
 	//-----------------------------------------
 	public boolean spookyChecker(String input)
 	{
 		boolean isValid = false;
-		
+		//-----------------------------------
 		for(String spookyString: spookyList)
 		{
 			if(input.contains(spookyString))
@@ -212,7 +193,6 @@ public class Chatbot
 				isValid = true;
 			}
 		}
-		
 		return isValid;
 	}
 }

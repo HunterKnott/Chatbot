@@ -35,16 +35,7 @@ public class ChatController
 	//__________________________________________________
 	public String interactWithChatbot(String userInput)
 	{
-		String output = "";
-		if(userInput == null)
-		{
-			output = "It returned null!";
-		}
-		else
-		{
-			output = userInput;
-		}
-		output = "Chatbot says: " + simplebot.processText(userInput);
+		String output = "You said: " + userInput + "Chatbot says: " + simplebot.processText(userInput);
 		return output;
 	}
 	//____________________________________________
@@ -55,6 +46,7 @@ public class ChatController
 		{
 			output = "You said a spooky word. Halloween";
 		}
+		
 		return output;
 	}
 }
