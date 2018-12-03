@@ -26,6 +26,7 @@ public class ChatPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListeners();
+		setupScrollPane();
 	}
 	//_____________________________________________________________
 	private void setupPanel()
@@ -52,5 +53,10 @@ public class ChatPanel extends JPanel
 				System.out.println("*Chat*");
 			}
 		});
+	}
+	//-------------------------------------------------------------
+	private void setupScrollPane()
+	{
+		
 	}
 }
