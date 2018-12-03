@@ -1,5 +1,6 @@
 package chat.controller;
 
+import chat.view.ChatFrame;
 //import model.ArrayList;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -9,11 +10,12 @@ import chat.model.Chatbot;
 public class ChatController
 {
 	private Chatbot simplebot;
-	
+	private ChatFrame appFrame;
 	//_________________________________________________________
 	public ChatController()
 	{
 		simplebot = new Chatbot();
+		appFrame = new ChatFrame(this);
 	}
 	//---------------------------------------------
 	public Chatbot getChatbot()
