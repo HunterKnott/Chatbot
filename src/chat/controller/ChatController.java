@@ -25,14 +25,7 @@ public class ChatController
 	//---------------------------------------------
 	public void start()
 	{
-		/*String userResponse = JOptionPane.showInputDialog(null, "Why hello there");
-		useChatbotCheckers(userResponse);
-		JOptionPane.showMessageDialog(null, interactWithChatbot(userResponse));
-		String continueInput = JOptionPane.showInputDialog(null, "Type 'Yes' to run the program again");
-		String userInput = JOptionPane.showInputDialog(null, "q to quit");
-		{
-			useChatbotCheckers(userInput);
-		}*/
+		
 	}
 	//__________________________________________________
 	public String interactWithChatbot(String userInput)

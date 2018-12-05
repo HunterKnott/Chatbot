@@ -111,8 +111,15 @@ public class Chatbot
 	//________________________________________________
 	public boolean legitimacyChecker(String input)
 	{
-		boolean isValid = true;
-		//-------------------------------
+		boolean isValid = false;
+		
+		if (input != null && input.length() > 3)
+		{
+			isValid = true;
+		}
+		
+		return isValid;
+		/*//-------------------------------
 		if (input == null)//Remember that when checking for null, use == and not .equals
 		{
 			isValid = false;
@@ -125,12 +132,31 @@ public class Chatbot
 		{
 			isValid = false;
 		}
-		return isValid;
+		return isValid;*/
 	}
 	//-----------------------------------------
 	public String processText(String userText)
 	{
-		String userResponse = "You said: ";
+		String answer = "";
+		
+		if(!legitimacyChecker(userText))
+		{
+			answer += "You really should not send null\n";
+		}
+		else
+		{
+			answer += "You said: " + userText + "\n";
+			
+			if(contentChecker(userText))
+			{
+				answer += "You said the special words.\n";
+			}
+			int randomIndex = (int)(responseList.size() * Math.random());
+			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
+		}
+		
+		return answer;
+		/*String userResponse = "You said: ";
 		String chatbotResponse = "Chatbot says: ";
 		int response = (int) (Math.random() * responseList.size());
 		String answer = "Answer: ";
@@ -164,7 +190,7 @@ public class Chatbot
 			chatbotResponse += responseList.get(response);
 			answer += userResponse + System.lineSeparator() + chatbotResponse;
 		}
-		return answer;//What will show up when method is called
+		return answer;//What will show up when method is called*/
 	}
 	//-------------------------------------------
 	public boolean contentChecker(String input)
