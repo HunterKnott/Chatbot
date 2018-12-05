@@ -30,7 +30,9 @@ public class ChatController
 	//__________________________________________________
 	public String interactWithChatbot(String userInput)
 	{
-		String output = "You said: " + userInput + "Chatbot says: " + simplebot.processText(userInput);
+		//String output = "You said: " + userInput + "Chatbot says: " + simplebot.processText(userInput);
+		String output = "";
+		output += simplebot.processText(userInput);
 		return output;
 	}
 	//____________________________________________
