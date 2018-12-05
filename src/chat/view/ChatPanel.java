@@ -6,6 +6,8 @@ import javax.swing.*;
 import chat.controller.ChatController;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Dimension;
 //-------------------------------------------------------------
 public class ChatPanel extends JPanel
 {
@@ -44,12 +46,14 @@ public class ChatPanel extends JPanel
 	//_____________________________________________________________
 	private void setupPanel()
 	{
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800, 600));
+		this.setBackground(Color.GREEN);
 		this.add(chatButton);
 		this.add(checkerButton);
 		this.add(loadButton);
 		this.add(saveButton);
 		this.add(chatField);
-		this.add(chatArea);
 		this.add(chatPane);
 	}
 	//-------------------------------------------------------------
