@@ -33,6 +33,7 @@ public class ChatPanel extends JPanel
 		//-------------------------------------------------------------
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
+		//("Text", rows, columns)
 		chatPane = new JScrollPane();
 		//-------------------------------------------------------------
 		setupPanel();
@@ -72,6 +73,12 @@ public class ChatPanel extends JPanel
 	//-------------------------------------------------------------
 	private void setupScrollPane()
 	{
-		
+		chatArea.setEditable(false);
+		chatArea.setLineWrap(true);
+		chatArea.setWrapStyleWord(true);
+		//-------------------------------------------------------------
+		chatPane.setViewportView(chatArea);
+		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 }
