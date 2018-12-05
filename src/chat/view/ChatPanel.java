@@ -29,7 +29,6 @@ public class ChatPanel extends JPanel
 		appLayout = new SpringLayout();
 		//-------------------------------------------------------------
 		chatButton = new JButton("Chat");
-		checkerButton = new JButton("Check Text");
 		loadButton = new JButton("Load");
 		saveButton = new JButton("Save");
 		//-------------------------------------------------------------
@@ -50,7 +49,6 @@ public class ChatPanel extends JPanel
 		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(Color.GREEN);
 		this.add(chatButton);
-		this.add(checkerButton);
 		this.add(loadButton);
 		this.add(saveButton);
 		this.add(chatField);
@@ -59,9 +57,9 @@ public class ChatPanel extends JPanel
 	//-------------------------------------------------------------
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, -87, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatArea);
-		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 73, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, chatPane, 50, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, chatPane, 50, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, chatPane, -50, SpringLayout.EAST, this);
 	}
 	//-------------------------------------------------------------
 	private void setupListeners()
@@ -84,5 +82,7 @@ public class ChatPanel extends JPanel
 		chatPane.setViewportView(chatArea);
 		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		checkerButton = new JButton("Check Text");
+		chatPane.setColumnHeaderView(checkerButton);
 	}
 }
