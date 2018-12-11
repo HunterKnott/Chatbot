@@ -4,6 +4,8 @@ package chat.view;
 
 import javax.swing.*;
 import chat.controller.ChatController;
+import chat.controller.IOController;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -117,7 +119,10 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String chatText = chatArea.getText();
+				String path = "";
+				IOController.saveText(appController, path, chatText);
+				chatArea.setText("Chat saved!");
 			}
 		});
 		//-------------------------------------------------------------
