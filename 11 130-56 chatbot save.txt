@@ -1,0 +1,16 @@
+Chat AreaYou said: Talk to the bot here
+Chatbot says: Delicious
+You really should not send null
+You really should not send null
+You said: Stop
+Chatbot says: Don't talk to me, peasent!
+You said: Make me not
+Chatbot says: What do you call yourself?
+You said: Test
+Chatbot says: Yeeesh!
+You really should not send null
+You really should not send null
+You really should not send null
+You really should not send null
+You said: null
+Chatbot says: Delicious

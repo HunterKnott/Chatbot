@@ -5,12 +5,12 @@ package chat.view;
 import javax.swing.*;
 import chat.controller.ChatController;
 import chat.controller.IOController;
-
+//-------------------------------------------------------------
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Dimension;
-//-------------------------------------------------------------
+//_____________________________________________________________
 public class ChatPanel extends JPanel
 {
 	private ChatController appController;
@@ -62,7 +62,7 @@ public class ChatPanel extends JPanel
 		this.add(resetButton);
 		this.add(chatField);
 	}
-	//-------------------------------------------------------------
+	//_____________________________________________________________
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, -267, SpringLayout.SOUTH, this);
@@ -91,7 +91,7 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, chatField, 6, SpringLayout.SOUTH, chatPane);
 		appLayout.putConstraint(SpringLayout.WEST, chatField, 10, SpringLayout.WEST, chatPane);
 	}
-	//-------------------------------------------------------------
+	//_____________________________________________________________
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -111,7 +111,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String path = getPath("load");
+				String chatText = IOController.loadFile(appController, path);
+				chatArea.setText(chatText);
 			}
 		});
 		//-------------------------------------------------------------
@@ -142,7 +144,7 @@ public class ChatPanel extends JPanel
 			}
 		});
 	}
-	//-------------------------------------------------------------
+	//_____________________________________________________________
 	private void setupScrollPane()
 	{
 		chatArea.setEditable(false);
