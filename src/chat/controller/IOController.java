@@ -44,35 +44,38 @@ public class IOController
 			app.handleErrors(genericError);
 		}
 	}
-		//_____________________________________________________________
-		public static String loadFile(ChatController app, String path)
+	//_____________________________________________________________
+	public static String loadFile(ChatController app, String path)
+	{
+		String contents = "";
+		//-------------------------------------------------------------
+		try
 		{
-			String contents = "";
-			//-------------------------------------------------------------
-			try
+			File saveFile = new File(path);
+			Scanner fileScanner;
+			if(saveFile.exists())
 			{
-				File saveFile = new File(path);
-				Scanner fileScanner;
-				if(saveFile.exists())
+				fileScanner = new Scanner(saveFile);
+				while(fileScanner.hasNext())
 				{
-					fileScanner = new Scanner(saveFile);
-					while(fileScanner.hasNext())
-					{
-						contents += fileScanner.nextLine() + "\n";
-					}
+					contents += fileScanner.nextLine() + "\n";
 				}
+				//-------------------------------------------------------------
+				fileScanner.close();
 			}
-			//_____________________________________________________________
-			catch(IOException error)
-			{
-				app.handleErrors(error);
-			}
-			//-------------------------------------------------------------
-			catch(Exception genericError)
-			{
-				app.handleErrors(genericError);
-			}
-			//-------------------------------------------------------------
-			return contents;
+		}
+		//_____________________________________________________________
+		catch(IOException error)
+		{
+			app.handleErrors(error);
+		}
+		//-------------------------------------------------------------
+		catch(Exception genericError)
+		{
+			app.handleErrors(genericError);
+		}
+		//-------------------------------------------------------------
+		return contents;
 	}
+	//_____________________________________________________________
 }
