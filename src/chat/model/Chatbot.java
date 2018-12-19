@@ -144,6 +144,7 @@ public class Chatbot
 		{
 			answer += "You really should not send null\n";
 		}
+		else if (legitimacyChecker(""))
 		else
 		{
 			answer += "You said: " + userText + "\n";
